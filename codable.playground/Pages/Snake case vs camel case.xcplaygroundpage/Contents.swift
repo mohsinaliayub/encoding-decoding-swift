@@ -14,7 +14,9 @@ let toy = Toy(name: "Teddy Bear")
 let employee = Employee(name: "John Appleseed", id: 7, favoriteToy: toy)
 
 let encoder = JSONEncoder()
+encoder.keyEncodingStrategy = .convertToSnakeCase
 let decoder = JSONDecoder()
+decoder.keyDecodingStrategy = .convertFromSnakeCase
 
 let snakeData = try encoder.encode(employee)
 let snakeString = String(data: snakeData, encoding: .utf8)!
