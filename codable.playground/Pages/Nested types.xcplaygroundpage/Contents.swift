@@ -1,10 +1,10 @@
 import Foundation
 
-struct Toy {
+struct Toy: Codable {
     var name: String
 }
 
-struct Employee {
+struct Employee: Codable {
     var name: String
     var id: Int
     var favoriteToy: Toy
@@ -13,3 +13,5 @@ struct Employee {
 let toy = Toy(name: "Teddy Bear")
 let employee = Employee(name: "John Appleseed", id: 7, favoriteToy: toy)
 
+let encoder = JSONEncoder()
+let decoder = JSONDecoder()
